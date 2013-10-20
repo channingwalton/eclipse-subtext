@@ -1,0 +1,18 @@
+<project name="SubTextParser" default="parser">
+	<target name="init">
+		<tstamp/>
+		<delete dir="build/generatedJava/com/teaminabox/eclipse/subtext/parser"/>
+	</target>
+
+	<!-- Building -->
+	
+	<target name="parser" depends="init">
+		<mkdir dir="build/generatedJava/com/teaminabox/eclipse/subtext/parser"/>
+		<antlr target="src/antlr/SubTextParser.g" outputdirectory="build/generatedJava/com/teaminabox/eclipse/subtext/parser">
+			<classpath location="lib/antlr.jar"/>
+		</antlr>
+		<antlr target="src/antlr/SubTextTreeWalker.g" outputdirectory="build/generatedJava/com/teaminabox/eclipse/subtext/parser">
+			<classpath location="lib/antlr.jar"/>
+		</antlr>
+	</target>
+</project>

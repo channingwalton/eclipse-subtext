@@ -1,0 +1,4 @@
+subtext Figure org.jhotdraw.framework.Figure+;
+<div class="subtext">
+<P>The interface of a graphical figure. Consider subclassing AbstractFigure which is likely to provide most of what you need.
+</div>

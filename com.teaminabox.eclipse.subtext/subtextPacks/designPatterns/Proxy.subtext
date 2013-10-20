@@ -1,0 +1,6 @@
+subtext Proxy ..*Proxy*+;
+<div class="subtext">
+<P>A Proxy provides a surrogate of placeholder for another object in order to control access to it. 
+
+<P>See <A HREF="http://c2.com/cgi/wiki?ProxyPattern">ProxyPattern</A>
+</div>

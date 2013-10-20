@@ -1,0 +1,5 @@
+subtext Storable org.jhotdraw.util.Storable+;
+<div class="subtext">
+	<P>
+Objects that implement the storable interface and are resurrected by StorableInput have to provide a default constructor with no arguments.
+</div>

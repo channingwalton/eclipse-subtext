@@ -1,0 +1,4 @@
+subtext util org.jhotdraw.util..*;
+<div class="subtext">
+<P>This package provides generally useful utilities that can be used independent of JHotDraw.
+</div>

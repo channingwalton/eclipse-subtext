@@ -1,0 +1,4 @@
+subtext Locator org.jhotdraw.framework.Locator+;
+<div class="subtext">
+<P>Locators encapsulate the strategy to locate a handle on a figure.
+</div>

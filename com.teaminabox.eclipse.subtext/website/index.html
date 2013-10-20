@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>
+      SubText
+    </TITLE>
+    <META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+    <META lang="en-uk" name="author" content="Channing Walton">
+    <META lang="en-uk" name="author" content="Lance Walton">
+    <META lang="en-uk" name="keywords" content="Eclipse, Plugin, AspectJ, AOP, Documentation, Team in a Box">
+    <META name="date" content="15 Aug 2004">
+    <LINK href="http://www.teaminabox.co.uk/style/default.css" type="text/css" rel="STYLESHEET">
+  </HEAD>
+  <BODY>
+  <div class="header">
+  	<h1>TEAMINABOX</h1>
+  	<span class="sub">SubText</span>
+  </div>
+  <div class="nav">
+		<a href="http://www.teaminabox.co.uk/">TIAB</a><br>
+		<a href="http://www.teaminabox.co.uk/downloads/index.html">Software</a><br>
+		&nbsp;&nbsp;<span class="deEmphasised">SubText</span><br>
+		<a href="http://www.fusiondq.com/index.html">FusionDQ</a>
+  </div>
+  <div class="links">
+  	<a href="http://www.agilealliance.com/"><img src="http://www.teaminabox.co.uk/images/agileAllianceSmall.jpg" alt="Agile Alliance Logo"></a>
+  	<p><a href="http://validator.w3.org/check/referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01!"></a>
+  	<p><a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a>
+  </div>
+    <div class="main">
+    <table width="100%">
+	<tr>
+		<td><a href="versions.html">Download</a></td>
+		<td><a href="screenshot.png">Screenshot</a></td>
+		<td><A HREF="http://www.teaminabox.co.uk/downloads/">More TIAB plugins</A></td>
+	</tr>
+	</table>
+	<P>Arguments for Aspect Oriented Programming are also relevant to documentation; <i>documentation crosscuts
+	concerns such as: error checking and handling, synchronization, context-sensitive behavior, 
+	performance optimizations, monitoring and logging, debugging support, multi-object protocols, etc.</i>
+    <P>
+    SubText is discovers and builds documentation dynamically using
+	a language similar to <A HREF="http://www.eclipse.org/aspectj/">AspectJ's</a> pointcuts, enabling
+	designers and developers to present crosscutting documentation where its actively needed during
+	development. 
+	
+	<h3>Examples</h3>
+	<P>We have included a couple of small sample packs of subtext documents you can add to existing projects.
+	One of the packs is for <A HREF="http://www.jhotdraw.org">JHotDraw</a> which is a good example of
+	a pattern rich, well structured codebase. Download JHotDraw, create a project with the source and all the SubText packs included in the plugin,
+	and browse the source with the SubText view open. SubText will collate documentation and present what is relevant to the class or interface being
+	viewed.
+	</P>
+	<h3>Feedback</h3>
+	<P>This is an experiment to see if there is value in this kind of documentation
+    and whether it should be developed <A HREF="#furtherDevelopment">further</a>. We would appreciate your
+    comments and ideas in <A HREF="http://www.eclipseplugincentral.com/index.php?name=PNphpBB2&amp;file=viewforum&amp;f=107">EPiC's forums</a>.
+	
+	<h3>Why SubText?</h3>
+	There are several advantages:
+	<ul>
+	<li>System level design and architecture decisions are often not visible at the detailed level of writing code. It
+	is easy to become lost in detail, forgetting the big picture. SubText helps developers to keep a system view while coding
+	by presenting relevant documentation based on characteristics of the classes and types being worked on.
+    <li>SubText can help new developers understand pattern-rich codebases. Generic documentation for well-known design patterns and
+    idioms can be added to any project helping new developers to understand how things work.
+    <li>Code quality can be improved by providing information about how types should be implemented or extended, and where they should
+    and should not be used.
+    <li>Developers can continuously refactor and add to SubText documents during a project. Since SubText documents
+    are lightweight, there isn't a lot of overhead. The result is a set of SubText documents which accurately reflect
+    the design and code of the system being developed.
+    <li><A HREF="#furtherDevelopment">Future</a> versions could provide a reverse lookup: which types are involved in feature X?
+    <li>It seemed like a good idea at the time ;)
+ 	</ul>
+ 	
+    <h3>How Does SubText Work?</h3>
+	<P>A SubText file contains a piece of crosscutting documentation. It must have a &quot;.subtext&quot;. extension and its form is as follows:
+	<p class="code"><b>subtext</b> <i>name</i> <i>PointcutExpression</i>;
+	<br><i>Documentation</i>
+	</p>
+	<br><i>name</i> can be any valid Java identifier
+	<br><i>Documentation</i> is any text. If the documentation is surrounded by a <code>DIV</code> element then it will be included as HTML. If it is
+	not surrounded by a <CODE>DIV</CODE> element it will be wrapped in a <CODE>PRE</CODE> element. 
+	<P>The stylesheets, header and footer used by the plugin are in <CODE>eclipse_install_dir/plugins/com.teaminabox.eclipse.subtext_x.y.z/style</CODE>.
+	
+	<h2>Pointcut Expressions</h2>
+	<P>The <code>Pointcut Expression</code> is a logical function of type patterns that defines which classes and interfaces a SubText applies to.
+	Patterns can include character, package and subtype wildcards. The pattern syntax is a simplified form of
+	<A HREF="http://www.eclipse.org/aspectj/">AspectJ</a>'s pointcut syntax.
+
+	<h2>Type Patterns</h2>
+	<P>Types may be matched by:
+	<ul>
+		<li>explicitly using the fully qualified name of the class
+		<li>the character wildcard &quot;*&quot; to match zero or more characters except for &quot;.&quot;
+		<li>the package wildcard &quot;..&quot; to match any sequence of characters that start and end with a &quot;.&quot;,
+			so it can be used to help pick out a selection of packages
+		<li>the subtype wildcard &quot;+&quot; will match a type and its subtypes
+	</ul>
+	
+	<h3>Type Pattern Examples</h3>
+	<p>The simplest type pattern is a fully qualified class name, which matches precisely the specified type:
+	<p class="code"><b>subtext</b> Map java.util.Map;
+	<br>A Map is ...
+	</p>
+	
+	<p>&quot;*&quot; Character Wildcards can be used as follows:
+	<p class="code"><b>subtext</b> AllMaps java.util.*Map;
+	<br>A Map is ...
+	</p>
+	<p>This expression will match all types whose name ends with <i>Map</i> in the java.util package
+	
+	<p>&quot;..&quot; Package Wildcards can be used as follows:
+	<p class="code"><b>subtext</b> SubtextMap com.teaminabox.subtext..*Map;
+	<br>A SubText Map is ...
+	</p>
+	<p>This expression will match all types whose unqualified name ends with <i>Map</i> in packages whose name starts with <i>com.teaminabox.subtext</i>.
+
+	<p>&quot;+&quot; Subtype Wildcards can be used as follows:
+	<p class="code"><b>subtext</b> Maps java.util.Map+;
+	<br>A Map is ...
+	</p>
+	<p>This expression will match the <i>java.util.Map</i> interface and all implementations and extensions.
+	
+	<p class="code"><b>subtext</b> Maps ..*Map+;
+	<br>A Map is ...
+	</p>
+	<p>This expression will match all types whose unqualified name ends with <i>Map</i> in any package, and its subtypes.
+	
+	<h2>Method Patterns</h2>
+	<P>The components of a method pattern are:
+	<ul>
+		<li>a pattern for the type to which the method belongs
+		<li>a '.'
+		<li>a method name pattern - can contain the wildcard &quot;*&quot; to match zero or more characters
+		<li>a parameter type list or pattern - the wildcard &quot;..&quot; means 'any parameters' and may be used in
+			place of the parameter list. Each type in a parameter list is represented by a type pattern.
+	</ul>
+	
+	<h3>Method Pattern Examples</h3>
+	<p>The simplest method pattern is a fully qualified class name, which matches precisely the specified type, followed by a full method name with no arguments:
+	<p class="code"><b>subtext</b> Map java.util.Map.size();
+	<br>A Map is ...
+	</p>
+	<p>This expression matches the <i>size()</i> method in <i>java.util.Map</i>
+	
+	<p>&quot;*&quot; Character Wildcards can be used as follows:
+	<p class="code"><b>subtext</b> SubtextMapGet com.teaminabox.subtext.Map.get*();
+	<br>A Map is ...
+	</p>
+	<p>This expression matches any no-arg method whose name begins with &quot;get&quot; in the <i>com.teaminabox.subtext.Map</i> type
+	
+	<p>Specifying parameters explicitly:
+	<p class="code"><b>subtext</b> MapPut java.util.Map+.put(java.lang.Object, java.lang.Object);
+	<br>When putting into a map ...
+	</p>
+	<p>This expression matches any method in subtypes of <i>java.util.Map</i> whose name is &quot;put&quot; and whose two parameters are
+		of type <i>java.lang.Object</i>
+		
+	<p>The &quot;..&quot; parameter wildcard may be used as follows:
+	<p class="code"><b>subtext</b> MapPut java.util.Map+.put(..);
+	<br>When putting into a map ...
+	</p>
+	<p>This expression matches any method in subtypes of <i>java.util.Map</i> whose name is &quot;put&quot; and which takes any parameters
+		
+	<p>Type patterns may be used to specify parameters:
+	<p class="code"><b>subtext</b> MapPut java.util.Map+.put(java.lang.Object+, ..*Object+);
+	<br>When putting into a map ...
+	</p>
+	<p>This expression matches any method whose name is &quot;put&quot; declared in subtypes of <i>java.util.Map</i>
+		and which has two parameters, the first of which must be a subtype of <i>java.lang.Object</i>, and the second
+		must be a subtype of any type whose name ends with &quot;Object&quot;.
+	
+	<h3>Pointcut Expression Examples</h3>
+	<p>
+	<p class="code"><b>subtext</b> AllMaps java.util.Map+ && com.teaminabox.subtext..*;
+	<br>A SubText Map is ...
+	</p>
+	<P>This expression will match a type if it is a subtype of <i>java.util.Map</i> and if it is declared in packages whose name starts with
+	<i>com.teaminabox.subtext</i>. The unqualified class name of the subtype can be anything.
+	<P>Any logical expression containing <code>&&</code> (and),<code>||</code> (or), <code>!</code> (not) with bracketing is supported.
+	<A name="furtherDevelopment"></a>
+	<h1>Further Development</h1>
+	<UL>
+	<li><b>Anonymous classes</b>
+	<br>They're not supported in the first release. Other nested classes are supported, however.
+	<li>Finding types that a SubText document crosscuts as part of code quality and review.
+	</ul>
+    <h1>
+      Bugs
+    </H1>
+    Please report any bugs in <A HREF="http://www.eclipseplugincentral.com/index.php?name=PNphpBB2&amp;file=viewforum&amp;f=107">EPiC's forums</a>.
+    </div>
+    <div class="footer">
+      <div class="copyright">&#169;2002-2004 TEAM IN A BOX Ltd. All rights reserved.</div>
+  </div>
+  </BODY>
+</HTML>

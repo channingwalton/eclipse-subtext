@@ -1,0 +1,15 @@
+subtext Comparable java.lang.Comparable+;
+<div class="subtext">
+<p>When a class implements <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Comparable.html">Comparable</a>
+	it defines a natural ordering for its objects. It is often the case that if a class implements
+	<i>Comparable</i>, it will also implement <i>equals(Object)</i> (in a consistent manner) and therefore will
+	also need to	implement <i>hashCode()</i>.
+<p>The 'consistency' of <i>equals(Object)</i> and <i>compareTo(Object)</i> means that:
+	<ul>
+		<li>if <i>a.compareTo(b)</i> returns 0, then <i>a.equals(b)</i> should return <i>true</i></li>
+		<li>if <i>a.compareTo(b)</i> returns a non-zero value then </i>a.equals(b)</i> should return <i>false</i></li>
+	</ul>
+<p>If this is not the case then it is likely that the class should <b>not</b> implement <i>Comparable</i>, and instead
+	a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Comparator.html">Comparator</a> should be used
+	where necessary.
+</div>

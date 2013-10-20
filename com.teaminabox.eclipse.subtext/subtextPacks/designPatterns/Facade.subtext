@@ -1,0 +1,5 @@
+subtext Facade ..*Facade+;
+<div class="subtext">
+<P>Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
+<P>See <A HREF="http://c2.com/cgi/wiki?FacadePattern">FacadePattern</A>
+</div>

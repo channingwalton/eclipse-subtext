@@ -1,0 +1,4 @@
+subtext figures org.jhotdraw.figures..*;
+<div class="subtext">
+<P>A kit of figures together with their associated support classes (tools, handles).
+</div>

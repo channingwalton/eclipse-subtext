@@ -1,0 +1,2 @@
+subtext PointCutMatchesMethod ..PointCut+.matches(..IMethod);
+Determine if a method is a joinpoint

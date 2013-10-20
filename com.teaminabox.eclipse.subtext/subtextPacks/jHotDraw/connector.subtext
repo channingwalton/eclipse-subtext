@@ -1,0 +1,4 @@
+subtext Connector org.jhotdraw.framework.Connector+;
+<div class="subtext">
+<P>Connector implements the strategy to determine the connections points. Connectors are created by the Figure's factory method connectorAt.
+</Div>

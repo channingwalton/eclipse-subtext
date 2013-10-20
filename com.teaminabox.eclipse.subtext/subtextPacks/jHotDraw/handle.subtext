@@ -1,0 +1,4 @@
+subtext Handle org.jhotdraw.framework.Handle+;
+<div class="subtext">
+<P>Handles are Adapters, adapting the operations to manipulate a figure to a common interface.
+</div>

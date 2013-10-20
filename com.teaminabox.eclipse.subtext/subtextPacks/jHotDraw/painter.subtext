@@ -1,0 +1,5 @@
+subtext Painter org.jhotdraw.framework.Painter+;
+<div class="subtext">
+<P>Strategy Pattern: Painter encapsulates an algorithm to render something in the DrawingView. 
+<BR>The DrawingView plays the role of the StrategyContext.
+</div>

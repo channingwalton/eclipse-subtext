@@ -1,0 +1,4 @@
+subtext ConnectionFigure org.jhotdraw.framework.ConnectionFigure+;
+<div class="subtext">
+<P>The Strategy pattern is used encapsulate the algorithm to locate the connection point. ConnectionFigure is the Strategy context and Connector is the Strategy.
+</div>

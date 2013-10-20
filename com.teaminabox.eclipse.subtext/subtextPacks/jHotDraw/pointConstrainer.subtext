@@ -1,0 +1,4 @@
+subtext PointConstrainer org.jhotdraw.framework.PointConstrainer+;
+<div class="subtext">
+<P>Stragegy Pattern: DrawingView is the StrategyContext.
+</div>

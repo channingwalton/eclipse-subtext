@@ -1,0 +1,6 @@
+subtext Command ..*Command+;
+<div class="subtext">
+<P>Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+
+<P>See <A HREF="http://c2.com/cgi/wiki?CommandPattern">CommandPattern</A>
+</div>

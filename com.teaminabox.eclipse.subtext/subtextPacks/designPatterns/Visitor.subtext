@@ -1,0 +1,6 @@
+subtext Visitor ..*Visitor+;
+<div class="subtext">
+<P>A visitor represents an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
+
+<P>See <A HREF="http://c2.com/cgi/wiki?VisitorPattern">VisitorPattern</A>
+</div>

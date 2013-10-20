@@ -1,0 +1,4 @@
+subtext applet org.jhotdraw.applet..*;
+<div class="subtext">
+<P>The applet package defines a default applet user interface for a JHotDraw applet. JHotDraw applets can be developed without using this package and they can have a different user interface.
+</div>

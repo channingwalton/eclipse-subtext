@@ -1,0 +1,6 @@
+subtext Bridge ..*Bridge;
+<div class="subtext">
+<P>A Bridge decouples an abstraction from its implementation so that the two can vary independently. 
+
+<P>See <A HREF="http://c2.com/cgi/wiki?BridgePattern">BridgePattern</A>
+</div>

@@ -1,0 +1,5 @@
+subtext AbstractFactory ..Abstract*Factory+;
+<div class="subtext">
+	<P>Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+	<P>See <A href="http://c2.com/cgi/wiki?AbstractFactoryPattern">AbstractFactoryPattern</A>
+</div>

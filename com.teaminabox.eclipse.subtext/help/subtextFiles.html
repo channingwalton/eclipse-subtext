@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>
+      SubText Files
+    </title>
+    <link rel="stylesheet" href="book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+  </head>
+  <body>
+    <h1>
+      SubText Files
+    </h1>
+	<P>A SubText file contains a piece of crosscutting documentation. It must have a &quot;.subtext&quot. extension and its form is as follows:
+	<p class="code"><b>subtext</b> <i>name</i> <i>TypeExpression</i>;
+	<br><i>Documentation</i>
+	</p>
+	<br><code>name</code> can be any valid Java identifier
+	<br><code>Documentation</code> is any text. If the documentation is surrounded by a <code>DIV</code> element then it will be included as HTML. If it is
+	not surrounded by a <CODE>DIV</CODE> element it will be wrapped in a <CODE>PRE</CODE> element. 
+	<P>The stylesheets, header and footer used by the plugin are in <CODE>eclipse_install_dir/plugins/com.teaminabox.eclipse.subtext_x.y.z/style</CODE>.
+	
+	<h2>Type Expressions</h2>
+	<P>The <code>TypeExpression<code> is a logical function of type patterns that defines which classes and interfaces a SubText applies to.
+	Patterns can include character, package and subtype wildcards. The pattern syntax is a simplified form of
+	<A HREF="http://www.eclipse.org/aspectj/">AspectJ</a>'s pointcut syntax.
+	
+	<h3>Type name patterns</h3>
+	<P>Types may be matched by:
+	<ul>
+	<li>explicitly using the fully qualified name of the class
+	<li>the character wildcard &quot;*&quot; to match zero or more characters except for &quot;.&quot;
+	<li>the package wildcard &quot;..&quot; to match any sequence of characters that start and end with a &quot;.&quot;, 
+	so it can be used to help pick out a selection of packages
+	<li>the subtype wildcard &quot;+&quot; will match a type and its subtypes
+	</ul>
+	<h3>Type Pattern Examples</h3>
+	<p>The simplest type pattern is a fully qualified class name, which matches precisely the specified type:
+	<p class="code"><b>subtext</b> Map java.util.Map;
+	<br>A Map is ...
+	</p>
+	
+	<p>&quot;*&quot; Character Wildcards can be used as follows:
+	<p class="code"><b>subtext</b> AllMaps java.util.*Map;
+	<br>A Map is ...
+	</p>
+	<p>This expression will match all types whose name ends with <i>Map</i> in the java.util package
+	
+	<p>&quot;..&quot; Package Wildcards can be used as follows:
+	<p class="code"><b>subtext</b> SubtextMap com.teaminabox.subtext..*Map;
+	<br>A SubText Map is ...
+	</p>
+	<p>This expression will match all types whose unqualified name ends with <i>Map</i> in packages whose name starts with <i>com.teaminabox.subtext</i>.
+
+	<p>&quot;+&quot; Subtype Wildcards can be used as follows:
+	<p class="code"><b>subtext</b> Maps java.util.Map+;
+	<br>A Map is ...
+	</p>
+	<p>This expression will match the <i>java.util.Map</i> interface and all implementations and extensions.
+	
+	<p class="code"><b>subtext</b> Maps ..*Map+;
+	<br>A Map is ...
+	</p>
+	<p>This expression will match all types whose unqualified name ends with <i>Map</i> in any package, and its subtypes.
+
+	<h3>Type Expression Examples</h3>
+	<p class="code"><b>subtext</b> AllMaps java.util.Map+ && com.teaminabox.subtext..*;
+	<br>A SubText Map is ...
+	</p>
+	<P>This expression will match a type if it is a subclass of <i>java.util.Map</i> and if it is declared in packages whose name starts with
+	<i>com.teaminabox.subtext</i>. The unqualified class name of the subtype can be anything.
+	<P>Any logical expression containing <code>&&</code> (and),<code>||</code> (or), <code>!</code> (not) with bracketing is supported.
+  </body>
+</html>
+

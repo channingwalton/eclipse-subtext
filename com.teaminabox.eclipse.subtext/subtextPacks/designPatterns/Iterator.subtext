@@ -1,0 +1,6 @@
+subtext Iterator ..*Iterator+ || ..*Enumerator+ || ..*Enumeration+ || ..*Closure+;
+<div class="subtext">
+<P>Provide an object which traverses some aggregate structure, abstracting away assumptions about the implementation of that structure.
+
+<P>See <A HREF="http://c2.com/cgi/wiki?IteratorPattern">IteratorPattern</a> and <A HREF="http://c2.com/cgi/wiki?UseClosuresNotEnumerations">UseClosuresNotEnumerations</A>
+</div>

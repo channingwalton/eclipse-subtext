@@ -1,0 +1,15 @@
+subtext HashCodeAndEquals ..*.hashCode() || ..*.equals(java.lang.Object);
+<div class="subtext">
+<p><b>Never</b> implement <i>hashCode()</i> or <i>equals(Object)</i> without
+	implementing the other one as well.
+<p>If you really need to implement logical equality, think hard about what really makes two objects equal.
+	Naive implementations can cause problems that are extremely difficult to solve.
+<p>Implement <i>hashCode()</i> using a subset of the fields used in the implementation of <i>equals(Object)</i>.
+	Choose the subset of fields which rapidly give a good distribution of hash codes (the purpose of a hash code is
+	to <b>quickly</b> determine the <b>approximate</b> location of an object in a hash table).
+<p>The use of mutable fields in <i>hashCode()</i> implementations can cause a great deal of pain - if an object is
+	added to a collection that depends on the hash code and the mutable field is then modified, the object
+	may not be findable in the collection any more.
+<p>Good advice for implementing <i>hashCode()</i> and <i>equals(Object)</i> can be found in
+	<A HREF="http://java.sun.com/docs/books/effective/">Effective Java</A> by Joshua Bloch.
+</div>

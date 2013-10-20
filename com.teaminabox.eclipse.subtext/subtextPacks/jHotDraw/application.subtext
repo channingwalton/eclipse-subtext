@@ -1,0 +1,4 @@
+subtext application org.jhotdraw.application..*;
+<div class="subtext">
+<P>The application package defines a default user interface for standalone JHotDraw applications. This is only a default presentation.
+</div>

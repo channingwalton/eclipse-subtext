@@ -1,0 +1,7 @@
+subtext JavaBean ..*Bean+;
+<div class="subtext">
+<P>JavaBeans must have a default constructor and implement Serializable. JavaBeans also generally use naming conventions to
+allow environments to introspect them easily.
+
+See <A HREF="http://java.sun.com/products/javabeans/">JavaBeans</A>
+</div>

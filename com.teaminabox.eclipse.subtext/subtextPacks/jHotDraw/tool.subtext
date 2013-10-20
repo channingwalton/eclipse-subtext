@@ -1,0 +1,5 @@
+subtext Tools org.jhotdraw.framework.Tool+;
+<div class="subtext">
+<P>Tools must inform their editor when they are done with an interaction by calling the editor's toolDone() method.  The Tools are created once and reused. They are initialized/deinitialized with activate()/deactivate().
+<P>Tool plays the role of the State in the State pattern. It encapsulates all state specific behavior. DrawingView plays the role of the StateContext.
+	</div>

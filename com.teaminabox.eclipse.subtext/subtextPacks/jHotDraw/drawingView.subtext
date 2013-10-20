@@ -1,0 +1,8 @@
+subtext DrawingView org.jhotdraw.framework.DrawingView+;
+<div class="subtext">
+<P>DrawingView plays the role of the StateContext in  the State pattern. Tool is the State.
+<br>
+DrawingView is the StrategyContext in the Strategy pattern  with regard to the UpdateStrategy. 
+<br>
+DrawingView is the StrategyContext for the PointConstrainer.
+</div>

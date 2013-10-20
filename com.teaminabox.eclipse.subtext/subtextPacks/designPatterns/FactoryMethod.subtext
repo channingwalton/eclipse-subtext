@@ -1,0 +1,7 @@
+subtext FactoryMethod ..*Factory+;
+<div class="subtext">
+<P>Define an interface for creating an object, but let subclasses decide 
+which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+
+<P>See <A HREF="http://c2.com/cgi/wiki?FactoryMethodPattern">FactoryMethodPattern</A>
+</div>

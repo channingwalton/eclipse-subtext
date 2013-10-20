@@ -1,0 +1,4 @@
+subtext framework org.jhotdraw.framework..*;
+<div class="subtext">
+<P>The framework package includes the classes and interfaces that define the JHotDraw framework. It doesn't provide any concrete implementation classes.
+</div>

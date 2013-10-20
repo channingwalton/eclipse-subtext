@@ -1,0 +1,4 @@
+subtext DrawingEditor org.jhotdraw.framework.DrawingEditor+;
+<div class="subtext">
+<P>DrawingEditor is a mediator. It decouples the participants  of a drawing editor.
+</div>

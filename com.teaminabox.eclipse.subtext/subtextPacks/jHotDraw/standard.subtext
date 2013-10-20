@@ -1,0 +1,5 @@
+subtext standard org.jhotdraw.standard..*;
+<div class="subtext">
+<P>The standard package provides standard implementations of the classes defined in the framework package. It provides abstract classes that implement a framework interface and provide default implementation. The convention is to prefix such classes with Abstract, e.g., AbstractFigure, AbstractHandle.
+<P>Classes that implement a framework interface and can be used as is start, with Standard, e.g., StandardDrawing, StandardDrawingView.
+</div>

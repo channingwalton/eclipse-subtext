@@ -1,0 +1,6 @@
+subtext State ..*State+;
+<div class="subtext">
+<P>Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+
+<P>See <A HREF="http://c2.com/cgi/wiki?StatePattern">StatePattern</A>
+</div>
